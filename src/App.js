@@ -4,6 +4,8 @@ import Layout from './Layouts/normal_layout';
 import { getRocrateMetadata, parseJsonld, getDatasets } from './Services/Constants/constants';
 import SideBar from './Components/Sidebar/Sidebar';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { push as Menu } from 'react-burger-menu';
+import {BiGitBranch} from 'react-icons/bi';
 import {useState, useEffect} from 'react';
 function App() {
   console.log(getRocrateMetadata);
@@ -130,22 +132,26 @@ function App() {
         <div className="App" id="outer-container">
           <SideBar 
             setCurrentObjectSelected={setCurrentObjectSelected} 
-			currentobjectselected={currentobjectselected}
+			      currentobjectselected={currentobjectselected}
             rocrateinfo={getRocrateMetadata} 
             treeinfo={treeinfo} 
             setTreeInfo={setTreeInfo} 
             searchterm={searchterm} 
             setSearchTerm={setSearchTerm} 
             full_sorted_data = {full_sorted_data}
-			originaltree = {originaltree}
+			      originaltree = {originaltree}
           />
-          <div id="page-wrap" className='flex'>
-            <div className='SideBarLine'>
-
+          <div id="page-wrap" className='notSideBar'>
+            <div className='main_window_component'>
+              <div>
+                {currentobjectselected}
+                <br></br>
+                <a href={currentobjectselected} target="_blank" download>{currentobjectselected.split("/").pop()}</a>
+              </div>
             </div>
-            <div className='notSideBar'>
-              {currentobjectselected}
-            </div>
+          </div>
+          <div className='mini_dashboard'>
+            <div className='gitbranchicon'><BiGitBranch/></div>
           </div>
         </div>
       </Layout>

@@ -28,6 +28,21 @@ body {
   top: 36px;
 }
 
+.gitbranchicon > svg {
+  position: fixed;
+  top: 80px;
+  left: 24px;
+  width: 24px;
+  height: 24px;
+  color: #373a47;
+}
+
+.gitbranchicon > svg:hover {
+  color: #373a47a4;
+  /*change size of the icon with animation*/
+  -webkit-transform: scale(1.5);
+}
+
 .bm-burger-bars {
   background: #373a47;
 }
@@ -81,11 +96,7 @@ body {
 .file-sidebar{
   border-left:#bdc3c7 2px solid;
   /*have overflow elipsis*/
-  overflow: hidden;
-  /*have a max width of 200px*/
-  max-width: 200px;
-  /*have a min width of 200px*/
-  min-width: 200px;
+  white-space: nowrap; 
 }
 
 .folder-sidebar:hover{
@@ -102,10 +113,32 @@ body {
 }
 
 .notSideBar {
-  margin-left: 70px;
+  position: fixed;
+  top:0;
+  min-height: 100vh;
+  margin-left: 90px;
   margin-right: 70px;
 }
 
 .flex {
   display: flex;
+}
+
+.file_icon_sidebar {
+  margin-right: 0.5em;
+}
+/* have the height be the same as the height of the notSideBar*/
+.mini_dashboard {
+  max-width: 70px;
+  min-height: 100vh;
+  background-color: #373a4725;
+}
+
+.main_window_component {
+  /*have the y overflow be */
+  max-height: 100vh;
+  min-height: 100vh;
+  /*min-width is the idth of the screen minus 70px + the size of the scrollbar*/
+  min-width: calc(100vw - 70px - 20px);
+  overflow-y: scroll;
 }

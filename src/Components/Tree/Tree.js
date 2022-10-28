@@ -1,3 +1,5 @@
+//import fileicons
+import { File_Icon } from "../File_Icons/File_Icons";
 
 const Tree = (props,currentObjectSelected,setCurrentObjectSelected,setTreeInfo,originaltree) => {
     console.log(props);
@@ -79,7 +81,7 @@ const Tree = (props,currentObjectSelected,setCurrentObjectSelected,setTreeInfo,o
             //console.log(file_name);
             return (
                 <div key={index} className={`indentation file-sidebar`} onClick={(e) => {setTreeInfo(originaltree);handleClickObject(e,file_name);}}>
-                    <span>{file_name}</span>
+                    <span className="flex">{File_Icon(file_name)}{file_name}</span>
                 </div>
             )
         }

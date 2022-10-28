@@ -20,7 +20,7 @@ const SideBar = (props) => {
 
   return (
     <>
-    <Menu pageWrapId={'page-wrap'} outerContainerId={ "outer-container" } width={ '20%' }>
+    <Menu pageWrapId={'page-wrap'} outerContainerId={ "outer-container" } width={ '22%' }>
 		<h1>Rocrate Contents</h1>
 		<div className='flex'>
 			<input type="text" placeholder="Search" onChange={(e) => handleSearch(e)} />
