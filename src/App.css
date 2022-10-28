@@ -14,9 +14,8 @@ body {
 }
 
 .bm-item {
-  display: inline-block;
   text-decoration: none;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   color: #d1d1d1;
   transition: color 0.2s;
 }
@@ -47,7 +46,6 @@ body {
   background: #373a47;
   padding: 2.5em 1.5em 0;
   font-size: 1.00em;
-  min-width: 40vw;
   overflow-x: scroll;
 }
 
@@ -69,18 +67,25 @@ body {
 
 /*have a class called indentation and forearch child that also has the class indentation increase the margin left*/
 .indentation > * {
-  margin-left: 15px;
+  margin-left: 0.7em;
+  /*border-left:#bdc3c7 2px solid;*/
 }
 
 /*when file-sidebar is hovered then change the background color of its parent*/
 .file-sidebar:hover {
   background-color: #f5f5f550;
   border-radius: 5px;
-  border-left:#373a47 3px solid;
+  border-left:#373a47 2px solid;
 }
 
 .file-sidebar{
-  border-left:#bdc3c7 3px solid;
+  border-left:#bdc3c7 2px solid;
+  /*have overflow elipsis*/
+  overflow: hidden;
+  /*have a max width of 200px*/
+  max-width: 200px;
+  /*have a min width of 200px*/
+  min-width: 200px;
 }
 
 .folder-sidebar:hover{
@@ -92,17 +97,13 @@ body {
   border-bottom: #8d90979a 1px solid;
   font-size: 1.15em;
   font-weight: bold;
-}
-
-.SideBarLine {
-  background-color: #373a4721;
-  width: 70px;
-  height: 100vh;
-  z-index: 1;
+  margin-bottom: 1.0em;
+  margin-top: 1.0em;
 }
 
 .notSideBar {
-  margin-left: 10px;;
+  margin-left: 70px;
+  margin-right: 70px;
 }
 
 .flex {

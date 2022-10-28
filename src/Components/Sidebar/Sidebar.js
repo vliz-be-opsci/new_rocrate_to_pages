@@ -1,5 +1,5 @@
 import React from 'react';
-import { slide as Menu } from 'react-burger-menu';
+import { push as Menu } from 'react-burger-menu';
 import Tree from '../Tree/Tree';
 import { useState, useEffect } from 'react';
 
@@ -20,11 +20,13 @@ const SideBar = (props) => {
 
   return (
     <>
-    <Menu>
-			<div>
-				<input type="text" placeholder="Search" onChange={(e) => handleSearch(e)} />
-			</div>
-      {Tree(props.treeinfo,props.setCurrentObjectSelected)}
+    <Menu pageWrapId={'page-wrap'} outerContainerId={ "outer-container" } width={ '20%' }>
+		<h1>Rocrate Contents</h1>
+		<div className='flex'>
+			<input type="text" placeholder="Search" onChange={(e) => handleSearch(e)} />
+			<button onClick={() => props.setTreeInfo(props.originaltree)}>Reset</button>
+		</div>
+      {Tree(props.treeinfo,props.currentobjectselected,props.setCurrentObjectSelected,props.setTreeInfo,props.originaltree)}
     </Menu>
     </> 
     

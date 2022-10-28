@@ -1,10 +1,24 @@
 
-const Tree = (props,setCurrentObjectSelected) => {
-    //console.log(props);
+const Tree = (props,currentObjectSelected,setCurrentObjectSelected,setTreeInfo,originaltree) => {
+    console.log(props);
+    console.log(setTreeInfo);
     //map all the items that are in props 
+
+    //function here that will be called when the user clicks on a folder
+    const handleClickFolder = (event) => {
+        //get the name of the folder
+        const folder_name = event.target.innerText;
+        //get the folder info
+        const folder_info = props.filter((item) => item.name === folder_name);
+        //set the tree info to the folder info
+        setTreeInfo(folder_info[0].content);
+    }
 
     //function that will be called when the user clicks on a file
     const handleClickObject = (event,name) => {
+
+        //TODO : find a replacement for getting the full name of the object
+
         //get the value of the file
         const file_name = name;
 
@@ -53,8 +67,8 @@ const Tree = (props,setCurrentObjectSelected) => {
             //perform recursion on the folder content
             return (
                 <div key={index} id={`${folder_name}`} className={`indentation`}>
-                    <p className={`indentation folder-sidebar`} onClick={() => handleClickObject(folder_name)}>{folder_name}</p>
-                    {Tree(folder_content,setCurrentObjectSelected)}
+                    <span className={`indentation folder-sidebar open`} onClick={(e) => {setTreeInfo(originaltree);handleClickFolder(e);handleClickObject(e,"")}}>{folder_name}</span>
+                    {Tree(folder_content,currentObjectSelected,setCurrentObjectSelected,setTreeInfo,originaltree)}
                 </div>
             )
         }
@@ -64,8 +78,8 @@ const Tree = (props,setCurrentObjectSelected) => {
             const file_name = item;
             //console.log(file_name);
             return (
-                <div key={index} className={`indentation file-sidebar`} onClick={(e) => handleClickObject(e,file_name)}>
-                    <p>{file_name}</p>
+                <div key={index} className={`indentation file-sidebar`} onClick={(e) => {setTreeInfo(originaltree);handleClickObject(e,file_name);}}>
+                    <span>{file_name}</span>
                 </div>
             )
         }

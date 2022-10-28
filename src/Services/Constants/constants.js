@@ -3,6 +3,7 @@
 //and return the JSON object
 const jsonld = require('jsonld');
 const rocratemetadata = require("../../tocopy/ro-crate-metadata.json");
+console.log(rocratemetadata);
 export const getRocrateMetadata = rocratemetadata;
 //async function here that will parse a given jsonld file and return the rdf triples
 //this function will be used to parse the ro-crate-metadata.json file
