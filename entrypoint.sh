@@ -9,6 +9,8 @@ echo "listing all the files that are in the ../.. directory"
 cd ../..
 pwd
 ls -a
+#echo the env variable inputs.crate_path from the actions.yml file
+echo "crate_path is $crate_path"
 '''
 echo "installing dependencies for building react app"
 npm install

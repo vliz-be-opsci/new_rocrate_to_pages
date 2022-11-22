@@ -5,9 +5,8 @@ branding:
   color: 'red'
 inputs:
   crate_path:  
-    description: 'Path to rocrate files'
-    required: false
-    default: '.'
+    description: 'URL to the ro-crate'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
