@@ -9,7 +9,7 @@ cd ../..
 pwd
 ls -a
 #echo the env variable inputs.crate_path from the actions.yml file
-echo "crate_path is $crate_path"
+echo "crate_path is $1
 '''
 echo "installing dependencies for building react app"
 npm install
