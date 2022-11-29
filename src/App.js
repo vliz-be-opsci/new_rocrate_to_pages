@@ -1,5 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+//import react scripts
+import React from 'react';
+
+//import REACT_INPUT_CRATE_PATH from .env
+const path_url = process.env.REACT_APP_CRATE;
+console.log(path_url);
+console.log(process.env);
 
 function App() {
   return (
@@ -15,7 +22,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          {path_url}
         </a>
       </header>
     </div>
