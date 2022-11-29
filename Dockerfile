@@ -13,5 +13,6 @@ COPY entrypoint.sh /entrypoint.sh
 
 #print(the env variable  inputs.crate_path passed from the actins.yml file)
 RUN echo $crate_path
-RUN chmod +x entrypoint.sh
+#chmod the entrypoint.sh file to make it executable
+RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
